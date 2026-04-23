@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In </title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: url("./images/signinBackground.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* MAIN CARD */
+.container{
+    width:800px;
+    height:450px;
+    display:flex;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* LEFT SIDE */
+.left{
+    width:50%;
+    background:#fff;
+    padding:40px;
+    text-align:center;
+     background: rgba(255, 255, 255, 0.85);
+}
+
+.left h2{
+    margin-bottom:20px;
+}
+
+/* SOCIAL ICONS */
+.icons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.icons div{
+    width:35px;
+    height:35px;
+    border:1px solid #ccc;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:14px;
+}
+
+/* INPUTS */
+.left input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:20px;
+    background:#f0f0f0;
+}
+
+/* LINKS */
+.left a{
+    font-size:12px;
+    color:#555;
+    text-decoration:none;
+}
+
+/* BUTTON */
+.signin-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:20px;
+    background:#1e88e5;
+    color:white;
+    margin-top:15px;
+    cursor:pointer;
+}
+
+/* RIGHT SIDE */
+.right{
+    width:50%;
+    background: linear-gradient(to right, #2196f3, #00bcd4);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    background: linear-gradient(
+        rgba(33,150,243,0.85),
+        rgba(0,188,212,0.85)
+    );
+}
+
+.right h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.right p{
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+/* SIGNUP BUTTON */
+.signup-btn{
+    padding:10px 25px;
+    border:1px solid white;
+    border-radius:20px;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left">
+        <h2>Sign in</h2>
+
+        <div class="icons">
+            <div>f</div>
+            <div>G</div>
+            <div>in</div>
+        </div>
+
+        <p style="font-size:12px;">Or sign in using E-Mail Address</p>
+
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <a href="#">Forgot your password?</a>
+
+        <button class="signin-btn">SIGN IN</button>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+        <h2>Create,<br>Account!</h2>
+        <p>Sign up if you still don't have an account ...</p>
+        <button class="signup-btn">SIGN UP</button>
+    </div>
+
+</div>
+
+</body>
+</html>

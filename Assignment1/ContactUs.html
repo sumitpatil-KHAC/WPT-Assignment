@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Contact Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#eaeaea;
+}
+
+/* MAIN CONTAINER */
+.container{
+    width:900px;
+    height:500px;
+    display:flex;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+/* LEFT PANEL */
+.left{
+    width:40%;
+    color:white;
+    padding:30px;
+    position:relative;
+    background: linear-gradient(135deg,#3f51b5,#5c6bc0);
+}
+
+.left h2{
+    margin-bottom:20px;
+}
+
+.info{
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+/* Diagonal shapes */
+.left::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:150px;
+    background:linear-gradient(45deg,#26c6da,#f48fb1);
+    clip-path: polygon(0 100%,100% 0,100% 100%);
+}
+
+/* SOCIAL */
+.social{
+    position:absolute;
+    bottom:20px;
+    left:30px;
+    z-index:2; /* keeps icons above shape */
+    display:flex;
+    gap:15px;
+}
+
+.social i{
+    font-size:18px;
+    color:white;
+    background: rgba(255,255,255,0.2);
+    padding:10px;
+    border-radius:50%;
+    transition:0.3s;
+}
+
+/* Hover effect */
+.social i:hover{
+    background:white;
+    color:#3f51b5;
+    transform:scale(1.2);
+}
+
+/* RIGHT PANEL */
+.right{
+    width:60%;
+    padding:30px;
+    background:#fff;
+}
+
+.right h2{
+    margin-bottom:20px;
+}
+
+/* INPUT GROUP */
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    border:none;
+    border-bottom:2px solid #ccc;
+    padding:8px;
+    outline:none;
+    transition:0.3s;
+}
+
+/* Hover + Focus Effects */
+.form-group input:hover,
+.form-group textarea:hover{
+    border-bottom:2px solid #3f51b5;
+}
+
+.form-group input:focus{
+    border-bottom:2px solid #4caf50;
+}
+
+.form-group textarea:focus{
+    border-bottom:2px solid #f44336;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#3f51b5;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#303f9f;
+    transform:scale(1.02);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left">
+        <h2>Get in touch</h2>
+
+        <div class="info"><b>Name</b><br>HTML CSS Tutorials</div>
+        <div class="info"><b>Email</b><br>htmlcss3tutorials@gmail.com</div>
+        <div class="info"><b>Phone</b><br>+91 1234567890</div>
+        <div class="info"><b>Address</b><br>123 Street, Bangalore, India</div>
+
+        <div class="social">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+       </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+        <h2>Contact Us</h2>
+
+        <div class="form-group">
+            <input type="text" placeholder="Full Name">
+        </div>
+
+        <div class="form-group">
+            <input type="email" placeholder="Email ID">
+        </div>
+
+        <div class="form-group">
+            <input type="text" placeholder="Website">
+        </div>
+
+        <div class="form-group">
+            <input type="text" placeholder="Contact Number">
+        </div>
+
+        <div class="form-group">
+            <textarea rows="3" placeholder="Message"></textarea>
+        </div>
+
+        <button>Submit</button>
+    </div>
+
+</div>
+
+</body>
+</html>

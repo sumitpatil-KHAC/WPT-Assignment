@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- CSS Introduction + How To (Internal CSS) -->
+    <title>CSS Demo</title>
+
+    <style>
+        /* CSS Comments */
+
+        /* CSS Syntax:
+           selector {
+               property: value;
+           }
+        */
+
+        /* CSS Selectors */
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4; /* CSS Colors */
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        #header { /* ID Selector */
+            background: blue; /* Background */
+            padding: 15px;
+        }
+
+        .box { /* Class Selector */
+            background-color: white;
+            border: 2px solid black; /* Borders */
+            margin: 20px; /* Margins */
+            padding: 15px; /* Padding */
+            width: 300px; /* Width */
+            height: 150px; /* Height */
+        }
+
+        /* Box Model Explanation */
+        .box-model {
+            background: lightblue;
+            border: 5px solid black;
+            padding: 20px;
+            margin: 30px;
+        }
+
+        /* Outline */
+        .outline-box {
+            outline: 3px dashed red;
+        }
+
+        /* Text */
+        .text-style {
+            color: green;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <h1>CSS Concepts Demo</h1>
+    </div>
+
+    <!-- Class usage -->
+    <div class="box">
+        This is a box showing margin, padding, border, height, and width.
+    </div>
+
+    <div class="box box-model">
+        This demonstrates the CSS Box Model.
+    </div>
+
+    <div class="box outline-box">
+        This box has an outline.
+    </div>
+
+    <div class="text-style">
+        This is styled text.
+    </div>
+
+</body>
+</html>

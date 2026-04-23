@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, serif;
+    }
+
+    body {
+      background: #f2f2f2;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume {
+      width: 850px;
+      background: white;
+      padding: 30px 35px;
+      color: #222;
+      line-height: 1.45;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      margin-bottom: 2px;
+    }
+
+    .header h2 {
+      font-size: 18px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .contact a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .section-title {
+      background: #d3d3d3;
+      text-align: center;
+      font-weight: bold;
+      padding: 6px 0;
+      margin: 22px 0 12px;
+      font-size: 17px;
+    }
+
+    .summary {
+      font-size: 15px;
+      text-align: justify;
+    }
+
+    .job, .education-item {
+      margin-bottom: 18px;
+    }
+
+    .job-title, .degree {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .company, .college {
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    .duration {
+      margin: 4px 0 8px;
+      font-size: 14px;
+    }
+
+    ul {
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .two-column {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .two-column .column {
+      width: 48%;
+    }
+
+    .skills-grid, .language-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 6px;
+      column-gap: 50px;
+      font-size: 15px;
+    }
+
+    .declaration {
+      margin-top: 25px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+
+    <div class="header">
+      <h1>Sumit Patil</h1>
+      <h2>Software Engineer</h2>
+
+      <div class="contact">
+        <p>78, Pimprala, Jalgaon - 425001</p>
+        <p>7249072386</p>
+        <p>sumit7637@gmail.com</p>
+        <p><a href="https://www.linkedin.com/in/sumit-patil-1b31a9271" target="_blank">linkedin.com/in/sumit-patil-1b31a9271</a></p>
+        <p>June 20, 2003</p>
+        <p>Unmarried</p>
+        <p>Indian</p>
+      </div>
+    </div>
+
+    <div class="section-title">Summary</div>
+    <div class="summary">
+      Enthusiastic software developer with a strong foundation in Java, SQL, web technologies,
+      and full-stack development. Seeking an opportunity to apply my technical skills, contribute
+      to real-world projects, and grow within an innovative software development team.
+    </div>
+
+    <div class="section-title">Experience</div>
+
+    <div class="job">
+      <div class="job-title">Intern</div>
+      <div class="company">7Tech IT Services Pvt. Ltd., Jalgaon</div>
+      <div class="duration">Nov 2025 – Feb 2026</div>
+      <ul>
+        <li>Worked on full-stack development using HTML, CSS, JavaScript, Bootstrap, Java, MySQL, MS SQL Server, C#, and .NET Framework.</li>
+        <li>Developed backend and desktop applications using ADO.NET and Windows Forms with CRUD operations and database transactions.</li>
+        <li>Designed, maintained, and tested real-world projects while performing functional testing on live systems.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Apprenticeship Intern</div>
+      <div class="company">Symbiosis Center of Distance Learning, Pune</div>
+      <div class="duration">Sponsored by Capgemini India</div>
+      <ul>
+        <li>Learned Java Full Stack technologies from industry experts.</li>
+        <li>Gained hands-on experience with Java, JDBC, Hibernate ORM, Spring Boot, HTML, CSS, JavaScript, and MySQL.</li>
+        <li>Developed an "Online Learning Portal" project and tested APIs using Postman and Swagger UI.</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Education</div>
+
+    <div class="education-item">
+      <div class="degree">Bachelor of Engineering in Computer Engineering</div>
+      <div class="college">Shram Sadhana College of Engineering and Technology, Jalgaon</div>
+      <div class="duration">2021 – 2025</div>
+      <p>CGPA: 8.06</p>
+    </div>
+
+    <div class="education-item">
+      <div class="degree">Higher Secondary Certificate (12th)</div>
+      <div class="duration">2020 – 2021</div>
+      <p>Percentage: 80%</p>
+    </div>
+
+    <div class="section-title">Skills</div>
+    <div class="skills-grid">
+      <div>Java, C++, JavaScript, SQL</div>
+      <div>HTML, CSS, Bootstrap 5</div>
+      <div>JDBC, Hibernate, Spring Boot</div>
+      <div>MySQL, MS SQL Server</div>
+    </div>
+
+    <div class="section-title">Languages</div>
+    <div class="language-list">
+      <div>Marathi: Native</div>
+      <div>English: Bilingual</div>
+      <div>Hindi: Advanced</div>
+    </div>
+
+    <div class="declaration">
+      <strong>Declaration:</strong> The information stated above is true to the best of my knowledge and belief.
+    </div>
+
+  </div>
+</body>
+</html>

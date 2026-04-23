@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- HTML Head -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Concepts Demo</title>
+
+    <style>
+        /* Classes & Id */
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+
+        #header {
+            background: orange;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex; /* Layout */
+        }
+
+        .left, .right {
+            padding: 15px;
+        }
+
+        .left {
+            flex: 2;
+        }
+
+        .right {
+            flex: 1;
+            background: #f2f2f2;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Semantics -->
+<header id="header">
+    <h1>Sumit Patil</h1>
+    <p>HTML Concepts Demo</p>
+</header>
+
+<div class="container">
+
+    <!-- Div + Block & Inline -->
+    <div class="left">
+        <section>
+            <h2>Block & Inline</h2>
+            <p>This is a block element.</p>
+            <span>This is inline element.</span>
+        </section>
+
+        <!-- Iframe + Filepath -->
+        <section>
+            <h2>Iframe Example</h2>
+            <iframe src="resume.html" width="100%" height="150"></iframe>
+        </section>
+    </div>
+
+    <div class="right">
+
+        <!-- Forms -->
+        <h2>Form</h2>
+
+        <form action="submit.html" method="post">
+
+            <!-- Input Types + Attributes -->
+            Name:
+            <input type="text" name="name" placeholder="Enter name" required><br><br>
+
+            Email:
+            <input type="email" name="email" required><br><br>
+
+            Password:
+            <input type="password" minlength="6"><br><br>
+
+            Gender:
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female<br><br>
+
+            Skills:
+            <input type="checkbox"> Java
+            <input type="checkbox"> HTML<br><br>
+
+            <!-- Form Elements -->
+            City:
+            <select>
+                <option>Pune</option>
+                <option>Mumbai</option>
+            </select><br><br>
+
+            Message:
+            <textarea></textarea><br><br>
+
+            <!-- Form Attributes -->
+            <input type="submit">
+            <input type="reset">
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
