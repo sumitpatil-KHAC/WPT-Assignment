@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/9/9a/Lamborghini_Logo.svg">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <title>Home</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <img src="./images/Lamborghini-Logo.png">
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-items" id="nav-items">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="signin.html">Sign In</a>
+            <a href="contactus.html">Contact Us</a>
+        </div>
+    </nav>
+<section class="hero">
+
+    
+
+    <!-- OVERLAY -->
+    <div class="hero-overlay"></div>
+
+    <!-- CONTENT -->
+    <div class="hero-content">
+        <h1>Unleash the Beast</h1>
+        <p>Experience Power. Luxury. Performance.</p>
+        <button>Explore Models</button>
+    </div>
+
+</section>
+
+<!-- FEATURED CARS -->
+<section class="cars">
+    <h2>Featured Models</h2>
+    <div class="car-container">
+
+        <div class="car-card">
+            <img src="./images/aventador.jpg">
+            <h3>Aventador</h3>
+        </div>
+
+        <div class="car-card">
+            <img src="./images/huracan.jpg">
+            <h3>Huracán</h3>
+        </div>
+
+        <div class="car-card">
+            <img src="./images/urus.jpg">
+            <h3>Urus</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT PREMIUM -->
+<section class="about">
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="./images/lambo2.jpg">
+        </div>
+
+        <div class="about-content">
+            <h2>Italian Engineering Excellence</h2>
+            <p>
+                Inspired by aerospace engineering and crafted in Italy, Lamborghini
+                represents the perfect fusion of innovation and design. Every curve,
+                every line is engineered for performance, delivering unmatched speed
+                and precision.
+            </p>
+
+            <div class="about-highlights">
+                <div>
+                    <h4>V12 Power</h4>
+                    <p>High-performance naturally aspirated engines</p>
+                </div>
+
+                <div>
+                    <h4>Aerodynamics</h4>
+                    <p>Designed for maximum airflow and stability</p>
+                </div>
+
+                <div>
+                    <h4>Carbon Fiber</h4>
+                    <p>Lightweight yet ultra-strong structure</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FEATURES PREMIUM -->
+<section class="features">
+    <h2 class="section-title">Performance Highlights</h2>
+
+    <div class="features-container">
+
+        <div class="feature-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Blazing Speed</h3>
+            <p>0–100 km/h in under 3 seconds with explosive acceleration.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-car-side"></i>
+            <h3>Aggressive Design</h3>
+            <p>Sharp lines, bold stance, and iconic Lamborghini styling.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-cogs"></i>
+            <h3>Advanced Engineering</h3>
+            <p>Precision-crafted components built for track-level performance.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Control & Safety</h3>
+            <p>Dynamic control systems ensuring stability at high speeds.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Ready to Drive?</h2>
+    <button>Book Test Drive</button>
+</section>
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- LEFT: BRAND -->
+            <div class="footer-brand">
+                <img src="./images/Lamborghini-Logo.png" alt="logo">
+                <h2>LAMBORGHINI</h2>
+                <p>Power. Performance. Prestige.</p>
+                
+            </div>
+
+            <!-- CENTER: LINKS -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="signin.html">Sign In</a>
+                <a href="contactus.html">Contact</a>
+            </div>
+
+            <!-- RIGHT: SOCIAL -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-google"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <br><br>
+                    <p>Email: contact@lamborghini.com</p>
+                    <p>Phone: +91 XXXXX XXXXX</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 All Rights Reserved | Designed by Sumit Patil</p>
+        </div>
+    </footer>
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("nav-items");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("show");
+        });
+    </script>
+    
+</body>
+</html>

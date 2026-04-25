@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/9/9a/Lamborghini_Logo.svg">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <title>About</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <img src="./images/Lamborghini-Logo.png">
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-items" id="nav-items">
+            <a href="home.html">Home</a>
+            <a href="about.html"class="active">About</a>
+            <a href="signup.html" >Sign Up</a>
+            <a href="signin.html">Sign In</a>
+            <a href="contactus.html">Contact Us</a>
+        </div>
+    </nav>
+
+    
+<section class="about-page">
+
+    <!-- HERO STORY -->
+    <div class="about-hero">
+        <h1>From Tractors to Supercars</h1>
+        <p>
+            Born from ambition and defiance, Lamborghini was created to challenge
+            the limits of performance and redefine automotive excellence.
+        </p>
+    </div>
+
+    <!-- STORY SECTION -->
+    <section class="founder">
+
+    <div class="founder-container">
+
+        <div class="founder-image">
+            <img src="./images/founder.png" alt="Ferruccio Lamborghini">
+        </div>
+
+        <div class="founder-content">
+            <h2>Ferruccio Lamborghini</h2>
+            <h4>The Visionary Founder</h4>
+
+            <p>
+                Ferruccio Lamborghini, originally a successful tractor manufacturer,
+                founded Automobili Lamborghini in 1963 with a bold vision to create
+                the perfect grand touring car.
+            </p>
+
+            <p>
+                Driven by passion and determination, he transformed a challenge into
+                one of the most iconic automotive brands in the world.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- BRAND PHILOSOPHY -->
+    <div class="about-grid">
+
+        <div class="about-card">
+            <h3> The Raging Bull</h3>
+            <p>
+                Inspired by Ferruccio’s zodiac sign Taurus, the bull symbolizes
+                power, aggression, and dominance.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Mission</h3>
+            <p>
+                Driving Humans Beyond — pushing limits through bold innovation
+                and unexpected experiences.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Naming Legacy</h3>
+            <p>
+                Models like Miura and Aventador are named after legendary
+                fighting bulls.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="timeline">
+        <h2>Milestones</h2>
+
+        <div class="timeline-item">
+            <span>1963</span>
+            <p>Company founded in Italy</p>
+        </div>
+
+        <div class="timeline-item">
+            <span>1966</span>
+            <p>Miura – First Supercar</p>
+        </div>
+
+        <div class="timeline-item">
+            <span>1974</span>
+            <p>Countach – Iconic wedge design</p>
+        </div>
+
+        <div class="timeline-item">
+            <span>1998</span>
+            <p>Acquired by Audi (VW Group)</p>
+        </div>
+
+        <div class="timeline-item">
+            <span>2018</span>
+            <p>Urus – Best selling Super SUV</p>
+        </div>
+
+    </div>
+
+    <!-- FUTURE -->
+    <div class="about-section">
+        <h2>Future Vision</h2>
+        <p>
+            Lamborghini is entering a new era of sustainability with hybrid
+            technology and upcoming fully electric models, while maintaining
+            its legendary performance DNA.
+        </p>
+    </div>
+
+</section>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- LEFT: BRAND -->
+            <div class="footer-brand">
+                <img src="./images/Lamborghini-Logo.png" alt="logo">
+                <h2>LAMBORGHINI</h2>
+                <p>Power. Performance. Prestige.</p>
+                
+            </div>
+
+            <!-- CENTER: LINKS -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="signin.html">Sign In</a>
+                <a href="contactus.html">Contact</a>
+            </div>
+
+            <!-- RIGHT: SOCIAL -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-google"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <br><br>
+                    <p>Email: contact@lamborghini.com</p>
+                    <p>Phone: +91 XXXXX XXXXX</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 All Rights Reserved | Designed by Sumit Patil</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("nav-items");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("show");
+        });
+    </script>
+</body>
+</html>

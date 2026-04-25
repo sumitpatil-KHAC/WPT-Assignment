@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/9/9a/Lamborghini_Logo.svg">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <title>Sign Up</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <img src="./images/Lamborghini-Logo.png">
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-items" id="nav-items">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="signup.html" class="active">Sign Up</a>
+            <a href="signin.html">Sign In</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </nav>
+    <section id="signup">
+      <div class="signup-card">
+        <h1>SignUp</h1>
+        <div  class="signup-form">
+            <form action="home.html" method="post">
+                <input type="text" name="name" placeholder="Enter Name" required>
+                <input type="text" name="userName" placeholder="Enter User Name">
+
+                <input type="email" name="email" placeholder="Enter Email" required>
+
+                <input type="password" name="password" placeholder="Enter Password" required>
+                
+                <input type="password" name="password" placeholder="Re-Enter Password" required>
+
+
+                <button type="submit">SignUp</button>
+            </form>
+           
+            <div class="icons">
+                    <a href="#"><i class="fab fa-google "></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+
+            </div>
+            <div id="alternate">
+                <p>Already have an Account ? </p>
+                <a href="signIn.html" class="signup-btn">SignIn</a>
+
+            </div>
+
+            
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- LEFT: BRAND -->
+            <div class="footer-brand">
+                <img src="./images/Lamborghini-Logo.png" alt="logo">
+                <h2>LAMBORGHINI</h2>
+                <p>Power. Performance. Prestige.</p>
+                
+            </div>
+
+            <!-- CENTER: LINKS -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="signin.html">Sign In</a>
+                <a href="contactus.html">Contact</a>
+            </div>
+
+            <!-- RIGHT: SOCIAL -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-google"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <br><br>
+                    <p>Email: contact@lamborghini.com</p>
+                    <p>Phone: +91 XXXXX XXXXX</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 All Rights Reserved | Designed by Sumit Patil</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("nav-items");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("show");
+        });
+    </script>
+</body>
+</html>
