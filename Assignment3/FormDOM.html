@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form onsubmit="getContent(event)">
+        <input type="text" placeholder="Enter First Name" id="first-name-field">
+        <br>
+        <input type="text" placeholder="Enter Last Name" id="last-name-field">
+        <br>
+        <input type="email" placeholder="Enter Email" id="email-field">
+        <br>
+        <input type="text" placeholder="Enter Phone" id="phone-field">
+        <br>
+        <button type="submit">Submit</button>
+        <div id="form-data">
+
+        </div>
+    </form>
+    <script>
+        function getContent(event){
+            event.preventDefault();
+
+            const fname = document.getElementById("first-name-field").value;
+            const lname = document.getElementById("last-name-field").value;
+            const email = document.getElementById("email-field").value;
+            const phone = document.getElementById("phone-field").value;
+
+            const table = document.createElement("table");
+            table.border="1";
+
+            const tableRow = document.createElement("tr");
+            
+            const fnameColumn = document.createElement("td");
+            fnameColumn.innerText = fname;
+            const lnameColumn = document.createElement("td");
+            lnameColumn.innerText = lname;
+            const emailColumn = document.createElement("td");
+            emailColumn.innerText = email;
+            const phoneColumn = document.createElement("td");
+            phoneColumn.innerText = phone;
+
+            tableRow.appendChild(fnameColumn);
+            tableRow.appendChild(lnameColumn);
+            tableRow.appendChild(emailColumn);
+            tableRow.appendChild(phoneColumn);
+            
+            table.appendChild(tableRow);
+
+            const outputDiv = document.getElementById("form-data");
+            outputDiv.innerHTML = ""; // clear previous data
+            outputDiv.appendChild(table);
+
+
+
+
+
+        }
+    </script>
+</body>
+</html>

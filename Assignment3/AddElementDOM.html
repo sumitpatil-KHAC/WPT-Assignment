@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    
+</head>
+<body>
+    <button type="submit" onclick="addNewPara()">Submit</button>
+    <div id="addpara">
+        <p>Old Para</p>
+    </div>
+    <script>
+        function addNewPara(){
+            const para = document.createElement("p");
+            para.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aperiam unde quae asperiores fugit hic, ratione, earum maxime vero nam aliquam impedit in nihil non velit ducimus. Quos itaque velit natus nisi, vitae asperiores illum officia repellendus repellat et in! Ullam nostrum labore similique quis eligendi natus perferendis quibusdam reprehenderit!";
+            const containerDiv = document.getElementById("addpara");
+            containerDiv.appendChild(para);
+            para.style.fontFamily="'Courier New', Courier, monospace";
+            para.style.fontSize="10";
+            para.style.color="red";
+
+
+        }
+
+    </script>
+</body>
+</html>

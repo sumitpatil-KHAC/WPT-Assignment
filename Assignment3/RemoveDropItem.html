@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove item from dropdown</title>
+</head>
+<body>
+    <select>
+        <option selected>Choose your Education</option>
+        <option id="ssc">10th</option>
+        <option id="hsc">12th</option>
+        <option id="grad">Graduation</option>
+        <option id="pgrad">Post Graduation</option>
+    </select>
+    <br>
+    <br>
+    <br><br><br><br><br><br>
+    <button type="button" onclick="removeSSC()">Remove 10th</button>
+    <button type="button" onclick="removeHSC()">Remove 12th</button>
+    <button type="button" onclick="removeGrad()">Remove Graduation</button>
+    <button type="button" onclick="removePGrad()">Remove Post Graduation</button>
+    
+
+    <script>
+        function removeSSC(){
+            const ssc = document.getElementById("ssc");
+            ssc.remove();
+            
+        }
+        function removeHSC(){
+            const hsc = document.getElementById("hsc");
+            hsc.remove();
+            
+        }
+        function removeGrad(){
+            const grad = document.getElementById("grad");
+            grad.remove();
+            
+        }
+        function removePGrad(){
+            const pgrad = document.getElementById("pgrad");
+            pgrad.remove();
+            
+        }
+    </script>
+    
+</body>
+</html>
