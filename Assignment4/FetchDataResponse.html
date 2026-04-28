@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data using urel and log the response </title>
+</head>
+<body>
+
+    <script>
+        function fetchData(url,callback){
+            console.log("Fetching data :",url);
+            setTimeout(()=>{
+                let response="Data received from :"+url;
+                callback(response);
+            },2000);
+        }
+        function handleResponse(data){
+            console.log("Response: ",data)
+        }
+
+        fetchData("https://jsonplaceholder.typicode.com/users" , handleResponse);
+
+    </script>
+    
+</body>
+</html>

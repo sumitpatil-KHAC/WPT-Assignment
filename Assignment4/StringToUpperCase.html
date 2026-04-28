@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String to uppercase </title>
+</head>
+<body>
+
+    <script>
+        
+        function processData(str ,callback ){
+            let result="";
+            for(let i =0 ; i < str.length ; i++){
+                let ch = str.charAt(i);
+                result = result + callback(ch);
+            }
+            return result;
+        }
+        function toUpperCase(ch){
+            return ch.toUpperCase();
+        }
+       
+        let output = processData("this is a string", toUpperCase);
+        console.log(output);
+    </script>
+</body>
+</html>

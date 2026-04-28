@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data </title>
+</head>
+<body>
+    <h2 id="output">Waiting...</h2>
+
+    <script>
+        function fetchData(url,callback){
+            console.log("Fetching data :",url);
+           
+            setTimeout(()=>{
+                let isError = Math.random() < 0.5;
+
+                if(isError){
+                    callback("Error: Failed to fetch data", null);
+                } else {
+                    let response="Data received from: " + url;
+                    callback(null, response);
+                }
+            },2000);
+        }
+
+        function handleResponse(error, data){
+            let output = document.getElementById("output");
+
+            if(error){
+                output.innerText = error;
+            } else {
+                output.innerText = data;
+            }
+        }
+
+        fetchData("https://jsonplaceholder.typicode.com/users", handleResponse);
+    </script>
+</body>
+</html>
