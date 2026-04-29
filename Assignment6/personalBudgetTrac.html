@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<title>Budget Tracker</title>
+
+<style>
+body {
+    background: linear-gradient(135deg, #eef2f7, #e3ebf6);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-card {
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    font-weight: bold;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container py-5">
+<h2 class="text-center mb-4 fw-bold"> Personal Budget Tracker</h2>
+
+<div class="row justify-content-center g-4">
+
+<!-- Income -->
+<div class="col-12 col-md-6 col-lg-4">
+<div class="card custom-card">
+<div class="card-header text-center">Income</div>
+<div class="card-body">
+
+<input type="number" id="salary" placeholder="Salary" class="form-control">
+<input type="number" id="income" placeholder="Passive Income" class="form-control">
+
+<button class="btn btn-primary w-100" onclick="calculateIncome()">Calculate</button>
+<div id="incomeResult" class="mt-2"></div>
+
+</div>
+</div>
+</div>
+
+<!-- Expense -->
+<div class="col-12 col-md-6 col-lg-4">
+<div class="card custom-card">
+<div class="card-header text-center">Expenses</div>
+<div class="card-body">
+
+<input type="number" id="rent" placeholder="Rent" class="form-control">
+<input type="number" id="insurance" placeholder="Insurance" class="form-control">
+<input type="number" id="grocery" placeholder="Groceries" class="form-control">
+<input type="number" id="entertain" placeholder="Entertainment" class="form-control">
+<input type="number" id="shopping" placeholder="Shopping" class="form-control">
+
+<button class="btn btn-danger w-100" onclick="calculateExpense()">Calculate</button>
+<div id="expenseResult" class="mt-2"></div>
+
+</div>
+</div>
+</div>
+
+<!-- Savings -->
+<div class="col-12 col-md-6 col-lg-4">
+<div class="card custom-card">
+<div class="card-header text-center">Savings</div>
+<div class="card-body">
+
+<input type="number" id="fund" placeholder="Emergency Fund" class="form-control">
+<input type="number" id="investment" placeholder="Investment" class="form-control">
+
+<button class="btn btn-success w-100" onclick="calculateSavings()">Calculate</button>
+<div id="savingResult" class="mt-2"></div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="text-center mt-4">
+    <button class="btn btn-primary" onclick="calculateBalance()">Balance</button> 
+    <p id="balance">0</p>
+</div>
+
+</div>
+
+<script>
+
+function createTotalTracker() {
+    let total = 0;
+    return (amount) => {
+        total += amount;
+        return total;
+    };
+}
+const updateBalance = createTotalTracker();
+
+function fetchInitialExpenses() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve([
+                { desc: "Rent", amount: 5000 },
+                { desc: "Groceries", amount: 2000 }
+            ]);
+        }, 1000);
+    });
+}
+
+async function loadInitialData() {
+    const data = await fetchInitialExpenses();
+    console.log("Initial Data:", data);
+}
+loadInitialData();
+
+function showMessage(msg, callback) {
+    callback(msg);
+}
+
+function calculateIncome() {
+    const salary = Number(document.getElementById("salary").value) || 0;
+    const passive = Number(document.getElementById("income").value) || 0;
+
+    const totalIncome = salary + passive;
+
+    document.getElementById("incomeResult").innerHTML =
+        `<b>Total Income:</b> ₹${totalIncome}`;
+
+    updateUI();
+}
+
+function calculateExpense() {
+
+    // OBJECTS
+    let expenses = [
+        { desc: "Rent", amount: Number(rent.value) || 0 },
+        { desc: "Insurance", amount: Number(insurance.value) || 0 },
+        { desc: "Groceries", amount: Number(grocery.value) || 0 },
+        { desc: "Entertainment", amount: Number(entertain.value) || 0 },
+        { desc: "Shopping", amount: Number(shopping.value) || 0 }
+    ];
+
+  
+    const [firstExpense] = expenses;
+    console.log("First Expense:", firstExpense);
+
+   
+    const names = expenses.map(e => e.desc);
+
+  
+    const bigExpenses = expenses.filter(e => e.amount > 1000);
+
+    
+    const totalExpense = expenses.reduce((sum, e) => sum + e.amount, 0);
+
+    document.getElementById("expenseResult").innerHTML =
+        `<b>Total Expense:</b> ₹${totalExpense}`;
+
+    showMessage("Expense Added!", msg => console.log(msg));
+
+    updateUI();
+}
+
+function calculateSavings() {
+    const fund = Number(document.getElementById("fund").value) || 0;
+    const invest = Number(document.getElementById("investment").value) || 0;
+
+    const total = fund + invest;
+
+    document.getElementById("savingResult").innerHTML =
+        `<b>Total Savings:</b> ₹${total}`;
+
+    updateUI();
+}
+
+function calculateBalance() {
+    const salary = Number(document.getElementById("salary").value) || 0;
+    const passive = Number(document.getElementById("income").value) || 0;
+
+    const rent = Number(document.getElementById("rent").value) || 0;
+    const insurance = Number(document.getElementById("insurance").value) || 0;
+    const grocery = Number(document.getElementById("grocery").value) || 0;
+    const entertain = Number(document.getElementById("entertain").value) || 0;
+    const shopping = Number(document.getElementById("shopping").value) || 0;
+
+    const fund = Number(document.getElementById("fund").value) || 0;
+    const invest = Number(document.getElementById("investment").value) || 0;
+
+    const income = salary + passive;
+    const expense = rent + insurance + grocery + entertain + shopping;
+    const savings = fund + invest;
+
+    const balance = income - expense - savings;
+
+    document.getElementById("balance").innerText = balance;
+}
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

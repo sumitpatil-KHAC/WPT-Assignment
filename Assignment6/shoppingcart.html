@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4 justify-content center">
+    
+                <label for="no_elements">No of Elements in array in numeric </label>
+                <input type="text" id="no_elements" class="form-control">
+                <button type="submit" class="btn btn-success mt-3" onclick="createArray()">Create Array</button>
+                <div class="container">
+                    <div class="row mt-5 mb-5" id="row-element">
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4 justify-content center">
+                
+                    <input type="text" class="form-control" id="country-code" placeholder="Enter County Code (eg. US = USA , IN = India , etc )">
+                    <button type="button" class="btn btn-primary mt-5" id="button" onclick="fetchHeadLine()">Fetch </button>
+                
+            </div>
+
+        </div>
+        <div class="row mt-5" id="container-card">
+        
+        </div>
+        
+    </div>
+    
+    
+    
+
+    <script>
+        //1.
+        
+        const TAX_RATE = 0.18;
+
+        // shopping cart array
+        let cart = [
+            { name: "Laptop", price: 50000, quantity: 1 },
+            { name: "Mouse", price: 500, quantity: 2 },
+            { name: "Keyboard", price: 1500, quantity: 1 }
+        ];
+
+        // function to calculate total
+        function calculateTotal(cartItems) {
+            let total = 0; // can change
+
+            for (var i = 0; i < cartItems.length; i++) {  // var used intentionally
+                total += cartItems[i].price * cartItems[i].quantity;
+            }
+
+            return total;
+        }
+
+        // function to calculate final price with tax
+        function calculateFinalAmount(cartItems) {
+            let subtotal = calculateTotal(cartItems);
+            let tax = subtotal * TAX_RATE;
+            let finalAmount = subtotal + tax;
+
+            return {
+                subtotal,
+                tax,
+            finalAmount
+            };
+        }
+
+        // display result
+        const result = calculateFinalAmount(cart);
+
+        console.log("Subtotal:", result.subtotal);
+        console.log("Tax:", result.tax);
+        console.log("Final Amount:", result.finalAmount);
+
+        //2.
+        function areaOfRectangle(l,b){
+            return l*b;
+        }
+        console.log("Area of rectangle using normal function ",areaOfRectangle(2,3));
+        const area = (l,b)=>l*b;
+        console.log("Area of rectangle using arrow function ",area(4,5));
+        //3.
+        const book = {
+            title:"Bhagwad Gita",
+            author:"Valimiki",
+            year:"1000"
+        };
+        function bookDetails(){
+            const {title , author , year} = book;
+            console.log("Title : ",title);
+            console.log("Author : ",author);
+            console.log("Year : ",year);
+        }
+        bookDetails();
+        //4.
+        const car = {
+            company : "Mahindra",
+            model : "Marazzo",
+            color : "White",
+
+        };
+        function carDetails(){
+            const {company , model , color} = car;
+            console.log("Company : ",company);
+            console.log("Model : ", model);
+            console.log("Color : ", color);
+        }
+        carDetails();
+        // 5.
+        const array =[1 , 2 , 3 , 4 , 5];
+        const [ a, b , c , d , e ] = array ; 
+        console.log(`Array element at -> a: ${a} , b:${b}`);
+
+        // 6.
+        const mapArray = array.map((value)=>{
+            return value*10;
+        })
+        console.log(mapArray);
+        // 7.
+        const evenArray = array.filter((value)=>{
+            if(value %2 === 0){
+                return true;
+            }
+            return false;
+        });
+        console.log(evenArray);
+        // 8.
+        const reduceArrayTotalPrice = array.reduce((acc , num)=>{
+            return num + acc;
+        });
+        console.log("Total Price of array ",reduceArrayTotalPrice);
+
+        // 9.
+        function sum(...numbers) {
+            return numbers.reduce((acc, num) => acc + num, 0);
+        }
+
+        console.log(sum(1,2,3,4));
+
+
+        // 10.
+        const fruit1 =["Banana" , "Apple" , "Chikoo"];
+        const fruit2 =["Guava" , "Mango" , "Watermelon" , "Grapes"];
+        const merge = [...fruit1 , ...fruit2];
+        console.log(merge);
+
+        // 11.
+        function executeAfterDelay(callback) {
+            setTimeout(() => {
+                callback();
+            }, 2000);
+        }
+
+        executeAfterDelay(() => {
+            console.log("Callback executed after delay");
+        });
+
+        // 12.
+        async function promise_func(num){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    if(num % 2 === 0){
+                        resolve("is a even no.");
+                    }
+                    else{
+                        reject("no. is not even ");
+                    }
+                    
+                },3000);
+            })
+        } 
+        promise_func(10)
+        .then((msg)=>{
+            console.log("Resolve Message ",msg);
+        }).catch((error)=>{
+            console.log(error);
+        })        
+
+        // 13.
+        function process(str, callback){
+            let result="";
+            for(let i = 0 ; i < str.length ; i++){
+                let ch = str.charAt(i);
+                result = result + callback(ch); 
+            }
+        }
+        function upperCase(ch){
+            return ch.toUpperCase();
+        }
+        const obj = process("this is a string",upperCase);
+        console.log(obj);
+        function outer() {
+            let count = 0;
+
+            return function inner() {
+                count++;
+                console.log(count);
+            };
+        }
+
+        const fn = outer();
+        fn(); // 1
+        fn(); // 2
+
+        // 14.
+        async function fetchHeadLine(){
+            let country_code = document.getElementById("country-code").value;
+            let response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country_code}&apiKey=9bf5dc52f6454e23aa40690e258cae5d`);
+            let headlineData = await response.json();
+            console.log(headlineData);
+
+            const container = document.getElementById("container-card");
+            container.innerHTML = "";
+
+            headlineData.articles.forEach( article =>{
+
+                const col = document.createElement("div");
+                col.classList.add("col-md-6" , "col-lg-4" , "col-12");
+
+                const card = document.createElement("div");
+                card.classList.add("card");
+
+                const cardimage = document.createElement("img");
+                cardimage.classList.add("card-img-top","img-fluid","mb-2");
+                cardimage.src = article.urlToImage;
+
+                const cardBody = document.createElement("div");
+                cardBody.classList.add("card-body");
+
+                const title = document.createElement("h2");
+                title.classList.add("card-title");
+                title.innerText = article.title;
+
+                const button = document.createElement("button");
+                button.classList.add("btn" ,"btn-primary");
+                button.innerText = "See More";
+                button.addEventListener("click", () => {
+                    alert("Button Clicked!")
+                 });
+
+                // append elements properly
+                cardBody.appendChild(title);
+                cardBody.appendChild(button);
+
+                card.appendChild(cardimage);
+                card.appendChild(cardBody);
+
+                col.appendChild(card);
+                container.appendChild(col);
+
+            });
+        }
+
+        // 15.
+        function processArray(arr) {
+            return arr
+                .filter(num => num % 2 === 0)
+                .map(num => num * 2)
+                .reduce((acc, num) => acc + num, 0);
+        }
+        console.log(processArray([1,2,3,4,5]));
+
+        const row = document.getElementById("row-element");
+        row.innerHTML ="";
+        async function createArray(){
+            const element = document.getElementById("no_elements").value;
+            console.log(element);
+
+            for(let i = 0 ; i < element ; i++){
+                const input = document.createElement("input");
+                input.type="text";
+                input.classList.add("form-control","mb-2","array-input");
+                input.placeholder = `Enter ${i+1} element`;
+                row.appendChild(input);
+
+            }
+            // Add a button to extract values
+            const btn = document.createElement("button");
+            btn.innerText = "Get Array values";
+            btn.classList.add("btn", "btn-primary", "mt-2");
+
+            btn.addEventListener("click", getArrayValues);
+
+            row.appendChild(btn);
+
+
+        }
+        // querySelectorAll - selects multiple elements 
+        // arr.push(Number(input.value)); - to convert string to number 
+        function getArrayValues() {
+            const inputs = document.querySelectorAll(".array-input");
+
+            const arr = [];
+
+            inputs.forEach(input => {
+                arr.push(Number(input.value));
+            });
+
+            console.log("Array:", arr);
+            const span = document.createElement("span");
+            span.innerText = "Array Elements";
+            const array_values = document.createElement("h4");
+            array_values.innerText = arr;
+            row.appendChild(span);
+            row.appendChild(array_values);
+
+            const filterArray = arr.filter((value)=>{
+                if(value % 2 === 0){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            });
+
+            console.log(filterArray);
+            const span1 = document.createElement("span");
+            span1.innerText = "Filtered Array Elements";
+            const filter_array_values = document.createElement("h4");
+            filter_array_values.innerText = filterArray;
+            row.appendChild(span1);
+            row.appendChild(filter_array_values);
+
+            const mapArray = arr.map((value)=>{
+                return value*2;
+            });
+            console.log(mapArray);
+            const span2 = document.createElement("span");
+            span2.innerText = "Map Array Elements";
+            const map_array_values = document.createElement("h4");
+            map_array_values.innerText = mapArray;
+            row.appendChild(span2);
+            row.appendChild(map_array_values);
+
+            const reduceArray = arr.reduce((acc,num)=>{
+                return num+acc;
+            });
+            console.log(reduceArray);
+            const span3 = document.createElement("span");
+            span3.innerText = "Reduce Array Elements";
+            const reduce_array_values = document.createElement("h4");
+            reduce_array_values.innerText = reduceArray;
+            row.appendChild(span3);
+            row.appendChild(reduce_array_values);
+
+
+
+
+
+
+        }
+
+
+        
+
+
+
+
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
